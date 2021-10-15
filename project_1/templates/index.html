@@ -1,0 +1,124 @@
+<!--Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+{% load static %}
+<!DOCTYPE HTML>
+<html lang="zxx">
+
+<head>
+	<title>Classic Sign In  Form Responsive Widget Template :: w3layouts</title>
+	<!-- Meta tag Keywords -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8" />
+	<meta name="keywords" content="Classic Sign In Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements"
+	/>
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!-- Meta tag Keywords -->
+	<!-- css files -->
+	<link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all" />
+	<!-- Style-CSS -->
+	<link rel="stylesheet" href="{% static 'css/fontawesome-all.css' %}">
+	<!-- Font-Awesome-Icons-CSS -->
+	<!-- //css files -->
+	<!-- web-fonts -->
+	<link href="//fonts.googleapis.com/css?family=Reem+Kufi&amp;subset=arabic" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+	<!-- //web-fonts -->
+</head>
+
+<body>
+	<!-- title -->
+	<h1>
+		<span>C</span>lassic
+		<span>S</span>ign
+		<span>I</span>n
+		<span>F</span>orm</h1>
+	<!-- //title -->
+	<!-- content -->
+	<div class="sub-main-w3">
+		<form action="{% url 'signin' %}" id="login" method="POST" >
+			{% csrf_token %}
+			<div class="form-style-agile">
+				<label>
+					Username
+					<i class="fas fa-user"></i>
+				</label>
+				<input placeholder="Username" name="username" type="text" required="">
+			</div>
+			<div class="form-style-agile">
+				<label>
+					Password
+					<i class="fas fa-unlock-alt"></i>
+				</label>
+				<input placeholder="Password" name="password" type="password" required="">
+			</div>
+			{% for x in messages %}
+			<h5 style="color:red">{{x}}</h5>
+			{% endfor %}
+			<!-- checkbox -->
+			<div class="wthree-text">
+				<ul>
+					<li>
+						<!-- switch -->
+						<div class="checkout-w3l">
+							<div class="demo5">
+								<div class="switch demo3">
+									<input type="checkbox">
+									<label>
+										<i></i>
+									</label>
+								</div>
+							</div>
+							<a href="#">Stay Signed In</a>
+						</div>
+						<!-- //checkout -->
+					</li>
+					<li>
+						<a href="#">Forgot Password?</a>
+					</li>
+				</ul>
+			</div>
+			<!-- //switch -->
+			<input type="submit" value="Log In">
+		</form>
+	</div>
+	<!-- //content -->
+
+	<!-- copyright -->
+	<div class="footer">
+		<p>&copy; 2018 Classic Sign In Form. All rights reserved | Design by
+			<a href="http://w3layouts.com">W3layouts</a>
+		</p>
+	</div>
+	<style>
+		.error{
+			color: red!important;
+		}
+	</style>
+	<!-- //copyright -->
+
+
+	<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+    <script src="{% static 'script.js' %}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+    crossorigin="anonymous"></script>
+
+
+
+
+</body>
+
+</html>

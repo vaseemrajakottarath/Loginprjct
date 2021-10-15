@@ -1,0 +1,77 @@
+{% load static %}
+<!-- {% static 'images' as DIR %} -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">HOME</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'logout'%}">Log out <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="container">
+          <h1 style="color: burlywood;">HOME PAGE</h1>
+      </div>
+
+    <table class="table" border="1px">
+      <thead>
+        <tr>
+          <th scope="col">S.NO</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Second Name</th>
+          <th scope="col">Age</th>
+          <th scope="col">Gender</th>
+        </tr>
+      </thead>
+      {% for x in list1 %}
+      <tbody>
+        <tr>
+          <th scope="row">{{forloop.counter}}</th>
+          <td >{{x.first}}</td>
+          <td >{{x.second}}</td>
+          <td >{{x.age}}</td>
+          <td >{{x.gender}}</td>
+        </tr>
+      </tbody>
+      {% endfor %}
+    </table>
+    <div class="container">
+      <div class="row" style="justify-content: space-between;">
+        {% for y in card1 %}
+    <div class="card" style="width: 18rem;">
+      <img src="{%static 'images' %}/{{y.img}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{y.title}}</h5>
+        <p class="card-text">{{y.disc}}.</p>
+      </div>
+      </div>
+      {% endfor %}
+    </div>
+    </div>
+
+
+</body>
+</html>
